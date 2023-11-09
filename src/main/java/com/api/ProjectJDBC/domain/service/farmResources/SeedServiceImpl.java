@@ -1,7 +1,7 @@
 package com.api.ProjectJDBC.domain.service.farmResources;
 
+import com.api.ProjectJDBC.domain.dao.SeedDao;
 import com.api.ProjectJDBC.domain.entities.resources.Seed;
-import com.api.ProjectJDBC.domain.repository.SeedRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,30 +11,30 @@ import java.util.List;
 public class SeedServiceImpl implements SeedService{
 
     @Autowired
-    private SeedRepository repository;
+    private SeedDao seedDao;
 
     @Override
     public void save(Seed seed) {
-        repository.save(seed);
+        seedDao.save(seed);
     }
 
     @Override
     public Seed getById(long id) {
-        return repository.getById(id);
+        return seedDao.getById(id);
     }
 
     @Override
     public List<Seed> getAll() {
-        return repository.getAll();
+        return seedDao.getAll();
     }
 
     @Override
     public void remove(long id) {
-        repository.remove(id);
+        seedDao.remove(id);
     }
 
     @Override
     public void update(Seed seed) {
-        repository.update(seed);
+        seedDao.update(seed);
     }
 }

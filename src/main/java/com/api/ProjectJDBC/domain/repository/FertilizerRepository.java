@@ -1,5 +1,6 @@
 package com.api.ProjectJDBC.domain.repository;
 
+import com.api.ProjectJDBC.domain.dao.FertilizerDao;
 import com.api.ProjectJDBC.domain.entities.resources.Fertilizer;
 import com.api.ProjectJDBC.domain.enums.FertilizerType;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Repository
-public class FertilizerRepository {
+public class FertilizerRepository implements FertilizerDao {
     
     private JdbcTemplate jdbcTemplate;
 
@@ -31,7 +32,7 @@ public class FertilizerRepository {
                 Enum.valueOf(FertilizerType.class, rs.getString("fertilizer_type")),
                 rs.getFloat("amount")
         ));
-    };
+    }
 
     public void save(Fertilizer fertilizer) {
         KeyHolder keyHolder = new GeneratedKeyHolder();

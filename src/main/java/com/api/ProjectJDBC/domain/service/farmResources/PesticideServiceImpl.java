@@ -1,5 +1,6 @@
 package com.api.ProjectJDBC.domain.service.farmResources;
 
+import com.api.ProjectJDBC.domain.dao.PesticideDao;
 import com.api.ProjectJDBC.domain.entities.resources.Pesticide;
 import com.api.ProjectJDBC.domain.repository.PesticideRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,30 +13,30 @@ public class PesticideServiceImpl implements PesticideService{
 
 
     @Autowired
-    private PesticideRepository repository;
+    private PesticideDao pesticideDao;
 
     @Override
     public void save(Pesticide pesticide) {
-        repository.save(pesticide);
+        pesticideDao.save(pesticide);
     }
 
     @Override
     public Pesticide getById(long id) {
-        return repository.getById(id);
+        return pesticideDao.getById(id);
     }
 
     @Override
     public List<Pesticide> getAll() {
-        return repository.getAll();
+        return pesticideDao.getAll();
     }
 
     @Override
     public void remove(long id) {
-        repository.remove(id);
+        pesticideDao.remove(id);
     }
 
     @Override
     public void update(Pesticide pesticide) {
-        repository.update(pesticide);
+        pesticideDao.update(pesticide);
     }
 }

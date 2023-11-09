@@ -1,5 +1,6 @@
 package com.api.ProjectJDBC.domain.repository;
 
+import com.api.ProjectJDBC.domain.dao.PesticideDao;
 import com.api.ProjectJDBC.domain.entities.resources.Pesticide;
 import com.api.ProjectJDBC.domain.enums.PesticideType;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Repository
-public class PesticideRepository {
+public class PesticideRepository implements PesticideDao {
 
     private JdbcTemplate jdbcTemplate;
 

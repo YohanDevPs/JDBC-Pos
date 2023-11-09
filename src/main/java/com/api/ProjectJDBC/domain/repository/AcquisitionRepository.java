@@ -1,5 +1,6 @@
 package com.api.ProjectJDBC.domain.repository;
 
+import com.api.ProjectJDBC.domain.dao.AcquisitionDao;
 import com.api.ProjectJDBC.domain.entities.Acquisition;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Repository
-public class AcquisitionRepository {
+public class AcquisitionRepository implements AcquisitionDao {
 
     private JdbcTemplate jdbcTemplate;
 

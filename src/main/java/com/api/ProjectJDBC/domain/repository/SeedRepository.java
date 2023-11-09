@@ -1,5 +1,6 @@
 package com.api.ProjectJDBC.domain.repository;
 
+import com.api.ProjectJDBC.domain.dao.SeedDao;
 import com.api.ProjectJDBC.domain.entities.resources.Seed;
 import com.api.ProjectJDBC.domain.enums.SeedType;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -14,7 +15,7 @@ import java.util.Objects;
 
 
 @Repository
-public class SeedRepository {
+public class SeedRepository implements SeedDao {
     private JdbcTemplate jdbcTemplate;
 
     public SeedRepository(JdbcTemplate jdbcTemplate){
@@ -31,7 +32,7 @@ public class SeedRepository {
                 Enum.valueOf(SeedType.class, rs.getString("seed_type")),
                 rs.getFloat("amount")
         ));
-    };
+    }
 
     public void save(Seed seed) {
         KeyHolder keyHolder = new GeneratedKeyHolder();

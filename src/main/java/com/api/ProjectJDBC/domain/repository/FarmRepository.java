@@ -1,8 +1,8 @@
 package com.api.ProjectJDBC.domain.repository;
 
+import com.api.ProjectJDBC.domain.dao.FarmDao;
 import com.api.ProjectJDBC.domain.entities.Farm;
 import com.api.ProjectJDBC.domain.entities.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.Objects;
 
 @Repository
-public class FarmRepository {
+public class FarmRepository implements FarmDao {
 
     private JdbcTemplate jdbcTemplate;
-    @Autowired
     private UserRepository userRepository;
 
-    public FarmRepository(JdbcTemplate jdbcTemplate){
+    public FarmRepository(JdbcTemplate jdbcTemplate, UserRepository userRepository){
         this.jdbcTemplate = jdbcTemplate;
+        this.userRepository = userRepository;
     }
 
     public List<Farm> getAll() {

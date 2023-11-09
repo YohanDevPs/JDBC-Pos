@@ -1,5 +1,6 @@
 package com.api.ProjectJDBC.domain.repository;
 
+import com.api.ProjectJDBC.domain.dao.UserDao;
 import com.api.ProjectJDBC.domain.entities.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
@@ -7,13 +8,12 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 import java.util.Objects;
 
 @Repository
-public class UserRepository {
+public class UserRepository implements UserDao {
 
     private JdbcTemplate jdbcTemplate;
 
@@ -56,7 +56,7 @@ public class UserRepository {
         ));
     }
 
-    public void update(User user) throws SQLException {
+    public void update(User user) {
         String sql = "UPDATE tuser SET name = ?, email = ?, password = ? WHERE id = ?";
         jdbcTemplate.update(sql, user.getName(), user.getEmail(), user.getPassword(), user.getId());
     }

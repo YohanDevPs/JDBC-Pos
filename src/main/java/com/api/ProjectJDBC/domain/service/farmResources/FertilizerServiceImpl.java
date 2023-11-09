@@ -1,7 +1,7 @@
 package com.api.ProjectJDBC.domain.service.farmResources;
 
+import com.api.ProjectJDBC.domain.dao.FertilizerDao;
 import com.api.ProjectJDBC.domain.entities.resources.Fertilizer;
-import com.api.ProjectJDBC.domain.repository.FertilizerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,30 +11,30 @@ import java.util.List;
 public class FertilizerServiceImpl implements FertilizerService{
 
     @Autowired
-    private FertilizerRepository repository;
+    private FertilizerDao fertilizerDao;
 
     @Override
     public void save(Fertilizer fertilizer) {
-        repository.save(fertilizer);
+        fertilizerDao.save(fertilizer);
     }
 
     @Override
     public Fertilizer getById(long id) {
-        return repository.getById(id);
+        return fertilizerDao.getById(id);
     }
 
     @Override
     public List<Fertilizer> getAll() {
-        return repository.getAll();
+        return fertilizerDao.getAll();
     }
 
     @Override
     public void remove(long id) {
-        repository.remove(id);
+        fertilizerDao.remove(id);
     }
 
     @Override
     public void update(Fertilizer fertilizer) {
-        repository.update(fertilizer);
+        fertilizerDao.update(fertilizer);
     }
 }

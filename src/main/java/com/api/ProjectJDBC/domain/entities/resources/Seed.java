@@ -23,10 +23,6 @@ public class Seed extends Resource {
         this.amount = amount;
     }
 
-    public Seed(Long id, String name, float quantity) {
-        super(id, name, quantity);
-    }
-
     public String getDescription() {
         return description;
     }
