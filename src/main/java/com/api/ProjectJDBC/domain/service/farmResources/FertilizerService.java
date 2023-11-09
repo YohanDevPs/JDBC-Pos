@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface FertilizerService {
 
-    public void save(Fertilizer fertilizer);
-    public Fertilizer getById(long id);
-    public List<Fertilizer> getAll();
-    public void remove(long id);
-    public void update(Fertilizer fertilizer);
+    void save(Fertilizer fertilizer);
+    Fertilizer getById(long id);
+    List<Fertilizer> getAll();
+    void remove(long id);
+    void update(Fertilizer fertilizer);
 }

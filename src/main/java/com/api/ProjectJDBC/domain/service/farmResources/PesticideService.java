@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface PesticideService {
     
-    public void save(Pesticide pesticide);
-    public Pesticide getById(long id);
-    public List<Pesticide> getAll();
-    public void remove(long id);
-    public void update(Pesticide pesticide);
+    void save(Pesticide pesticide);
+    Pesticide getById(long id);
+    List<Pesticide> getAll();
+    void remove(long id);
+    void update(Pesticide pesticide);
 }

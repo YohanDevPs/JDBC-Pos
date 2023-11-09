@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface FarmService {
 
-    public void save(Farm farm);
-    public Farm getById(long id) throws SQLException;
-    public List<Farm> getAll();
-    public void remove(long id);
-    public void update(Farm farm) throws SQLException;
+    void save(Farm farm);
+    Farm getById(long id) throws SQLException;
+    List<Farm> getAll();
+    void remove(long id);
+    void update(Farm farm) throws SQLException;
 }

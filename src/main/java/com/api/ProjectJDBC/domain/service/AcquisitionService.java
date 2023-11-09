@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface AcquisitionService {
 
-    public void save(Acquisition acquisition);
-    public Acquisition getById(long id);
-    public List<Acquisition> getAll();
-    public void remove(long id);
-    public void update(Acquisition acquisition);
+    void save(Acquisition acquisition);
+    Acquisition getById(long id);
+    List<Acquisition> getAll();
+    void remove(long id);
+    void update(Acquisition acquisition);
 }

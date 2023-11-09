@@ -5,9 +5,10 @@ import com.api.ProjectJDBC.domain.entities.resources.Resource;
 import java.util.List;
 
 public interface ResourceService {
-    public void save(Resource Resource);
-    public Resource getById(long id);
-    public List<Resource> getAll();
-    public void remove(long id);
-    public void update(Resource Resource);
+
+    void save(Resource Resource);
+    Resource getById(long id);
+    List<Resource> getAll();
+    void remove(long id);
+    void update(Resource Resource);
 }

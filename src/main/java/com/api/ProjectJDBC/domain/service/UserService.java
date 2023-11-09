@@ -6,9 +6,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface UserService {
-    public void save(User user);
-    public User getById(long id) throws SQLException;
-    public List<User> getAll();
-    public void remove(long id);
-    public void update(User user) throws SQLException;
+
+    void save(User user);
+    User getById(long id) throws SQLException;
+    List<User> getAll();
+    void remove(long id);
+    void update(User user) throws SQLException;
 }
