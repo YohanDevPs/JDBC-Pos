@@ -1,7 +1,7 @@
 package com.api.ProjectJDBC.domain.controller;
 
-import com.api.ProjectJDBC.domain.entities.User;
-import com.api.ProjectJDBC.domain.service.UserService;
+import com.api.ProjectJDBC.domain.entities.Acquisition;
+import com.api.ProjectJDBC.domain.service.AcquisitionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -10,39 +10,39 @@ import java.sql.SQLException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user/v1")
-public class UserController {
+@RequestMapping("/api/acquisition/v1")
+public class AcquisitionController {
 
     @Autowired
-    private UserService userService;
+    private AcquisitionService service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody User user) {
-        userService.save(user);
+    public void save(@RequestBody Acquisition acquisition) {
+        service.save(acquisition);
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<User> getAll() {
-        return userService.getAll();
+    public List<Acquisition> getAll() {
+        return service.getAll();
     }
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public User getById(@PathVariable(value = "id") Long id) throws SQLException {
-        return userService.getById(id);
+    public Acquisition getById(@PathVariable(value = "id") Long id) throws SQLException {
+        return service.getById(id);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public void update(@RequestBody User user) throws SQLException {
-        userService.update(user);
+    public void update(@RequestBody Acquisition Acquisition) throws SQLException {
+        service.update(Acquisition);
     }
 
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable(value = "id") Long id) {
-        userService.remove(id);
+        service.remove(id);
     }
 }

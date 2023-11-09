@@ -1,48 +1,46 @@
 package com.api.ProjectJDBC.domain.controller;
 
-import com.api.ProjectJDBC.domain.entities.User;
-import com.api.ProjectJDBC.domain.service.UserService;
+import com.api.ProjectJDBC.domain.entities.Resource;
+import com.api.ProjectJDBC.domain.service.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user/v1")
-public class UserController {
-
+@RequestMapping("/api/resource/v1")
+public class ResourceController {
     @Autowired
-    private UserService userService;
+    private ResourceService service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody User user) {
-        userService.save(user);
+    public void save(@RequestBody Resource Resource) {
+        service.save(Resource);
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<User> getAll() {
-        return userService.getAll();
+    public List<Resource> getAll() {
+        return service.getAll();
     }
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public User getById(@PathVariable(value = "id") Long id) throws SQLException {
-        return userService.getById(id);
+    public Resource getById(@PathVariable(value = "id") Long id) {
+        return service.getById(id);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public void update(@RequestBody User user) throws SQLException {
-        userService.update(user);
+    public void update(@RequestBody Resource Resource)  {
+        service.update(Resource);
     }
 
     @DeleteMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@PathVariable(value = "id") Long id) {
-        userService.remove(id);
+        service.remove(id);
     }
 }
