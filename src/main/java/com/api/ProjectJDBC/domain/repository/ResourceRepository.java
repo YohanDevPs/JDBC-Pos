@@ -1,33 +1,24 @@
 package com.api.ProjectJDBC.domain.repository;
 
-import com.api.ProjectJDBC.domain.entities.Resource;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
-
-import java.sql.PreparedStatement;
-import java.sql.Statement;
-import java.util.List;
-import java.util.Objects;
 
 @Repository
 public class ResourceRepository {
 
-    private JdbcTemplate jdbcTemplate;
-
-    public ResourceRepository(JdbcTemplate jdbcTemplate){
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-//    public List<Resource> getAll() {
-//        String sql = "SELECT id, name, quantity FROM tresource";
-//        return jdbcTemplate.query(sql, (rs, i) ->  new Resource(
-//                rs.getLong("id"),
-//                rs.getString("name"),
-//                rs.getFloat(3)
-//        ));
-//    };
+//    private JdbcTemplate jdbcTemplate;
+//
+//    public ResourceRepository(JdbcTemplate jdbcTemplate){
+//        this.jdbcTemplate = jdbcTemplate;
+//    }
+//
+////    public List<Resource> getAll() {
+////        String sql = "SELECT id, name, quantity FROM tresource";
+////        return jdbcTemplate.query(sql, (rs, i) ->  new Resource(
+////                rs.getLong("id"),
+////                rs.getString("name"),
+////                rs.getFloat(3)
+////        ));
+////    };
 //
 //    public void save(Resource resource) {
 //        KeyHolder keyHolder = new GeneratedKeyHolder();
@@ -42,9 +33,9 @@ public class ResourceRepository {
 //        resource.setId(Objects.requireNonNull(keyHolder.getKey()).longValue());
 //    }
 //
-//    public Resource getById(Long id) {
+//    public Resource getById(Long id, Resource resource) {
 //        String sql = "SELECT id, name, quantity FROM tresource WHERE id = ?";
-//        return jdbcTemplate.queryForObject(sql, new Object[]{id}, (rs, rowNum) -> new Resource(
+//        return jdbcTemplate.queryForObject(sql, new Object[]{id}, (rs, rowNum) -> new (
 //                rs.getLong("id"),
 //                rs.getString("name"),
 //                rs.getFloat("quantity")

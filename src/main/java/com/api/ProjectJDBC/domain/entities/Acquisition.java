@@ -1,5 +1,6 @@
 package com.api.ProjectJDBC.domain.entities;
 
+import com.api.ProjectJDBC.domain.entities.resources.Resource;
 import jakarta.persistence.*;
 
 import java.util.Date;

@@ -1,11 +1,14 @@
-package com.api.ProjectJDBC.domain.entities;
+package com.api.ProjectJDBC.domain.entities.resources;
 
+import com.api.ProjectJDBC.domain.entities.Acquisition;
+import com.api.ProjectJDBC.domain.entities.User;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tresource")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Resource {
 
     @Id

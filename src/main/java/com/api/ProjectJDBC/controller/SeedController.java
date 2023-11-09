@@ -1,43 +1,42 @@
-package com.api.ProjectJDBC.domain.controller;
+package com.api.ProjectJDBC.controller;
 
-import com.api.ProjectJDBC.domain.entities.Farm;
-import com.api.ProjectJDBC.domain.service.FarmService;
+import com.api.ProjectJDBC.domain.entities.resources.Seed;
+import com.api.ProjectJDBC.domain.service.farmResources.SeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/farm/v1")
-public class FarmController {
+@RequestMapping("/api/seed/v1")
+public class SeedController {
 
     @Autowired
-    private FarmService service;
+    private SeedService service;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void save(@RequestBody Farm farm) {
-        service.save(farm);
+    public void save(@RequestBody Seed seed) {
+        service.save(seed);
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Farm> getAll() {
+    public List<Seed> getAll() {
         return service.getAll();
     }
 
     @GetMapping(value = "/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Farm getById(@PathVariable(value = "id") Long id) throws SQLException {
+    public Seed getById(@PathVariable(value = "id") Long id) {
         return service.getById(id);
     }
 
     @PutMapping
     @ResponseStatus(HttpStatus.OK)
-    public void update(@RequestBody Farm Farm) throws SQLException {
-        service.update(Farm);
+    public void update(@RequestBody Seed seed)  {
+        service.update(seed);
     }
 
     @DeleteMapping(value = "/{id}")

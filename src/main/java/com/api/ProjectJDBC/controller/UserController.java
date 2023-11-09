@@ -1,4 +1,4 @@
-package com.api.ProjectJDBC.domain.controller;
+package com.api.ProjectJDBC.controller;
 
 import com.api.ProjectJDBC.domain.entities.User;
 import com.api.ProjectJDBC.domain.service.UserService;

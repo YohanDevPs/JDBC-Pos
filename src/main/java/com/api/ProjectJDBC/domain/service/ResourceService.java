@@ -1,6 +1,6 @@
 package com.api.ProjectJDBC.domain.service;
 
-import com.api.ProjectJDBC.domain.entities.Resource;
+import com.api.ProjectJDBC.domain.entities.resources.Resource;
 
 import java.util.List;
 

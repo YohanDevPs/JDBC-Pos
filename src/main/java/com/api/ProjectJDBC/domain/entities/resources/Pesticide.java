@@ -1,23 +1,23 @@
-package com.api.ProjectJDBC.domain.entities;
+package com.api.ProjectJDBC.domain.entities.resources;
 
-import com.api.ProjectJDBC.domain.enums.SeedType;
+import com.api.ProjectJDBC.domain.enums.PesticideType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "tseed")
-public class Seed extends Resource{
+@Table(name = "tpesticide")
+public class Pesticide extends Resource {
 
     private String description;
-    @Column(name = "seed_type")
-    private SeedType seedType;
+    @Column(name = "pesticide_type")
+    private PesticideType pesticideType;
     private float amount;
 
-    public Seed(Long id, String name, float quantity, String description, SeedType seedType, float amount) {
+    public Pesticide(Long id, String name, float quantity, String description, PesticideType pesticideType, float amount) {
         super(id, name, quantity);
         this.description = description;
-        this.seedType = seedType;
+        this.pesticideType = pesticideType;
         this.amount = amount;
     }
 
@@ -29,12 +29,12 @@ public class Seed extends Resource{
         this.description = description;
     }
 
-    public SeedType getSeedType() {
-        return seedType;
+    public PesticideType getPesticideType() {
+        return pesticideType;
     }
 
-    public void setSeedType(SeedType seedType) {
-        this.seedType = seedType;
+    public void setPesticideType(PesticideType pesticideType) {
+        this.pesticideType = pesticideType;
     }
 
     public float getAmount() {
