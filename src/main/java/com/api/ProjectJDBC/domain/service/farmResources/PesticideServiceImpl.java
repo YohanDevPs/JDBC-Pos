@@ -2,7 +2,6 @@ package com.api.ProjectJDBC.domain.service.farmResources;
 
 import com.api.ProjectJDBC.domain.dao.PesticideDao;
 import com.api.ProjectJDBC.domain.entities.resources.Pesticide;
-import com.api.ProjectJDBC.domain.repository.PesticideRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
