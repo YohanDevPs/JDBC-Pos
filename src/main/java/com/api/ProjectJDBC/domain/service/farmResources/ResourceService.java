@@ -1,4 +1,4 @@
-package com.api.ProjectJDBC.domain.service;
+package com.api.ProjectJDBC.domain.service.farmResources;
 
 import com.api.ProjectJDBC.domain.entities.resources.Resource;
 

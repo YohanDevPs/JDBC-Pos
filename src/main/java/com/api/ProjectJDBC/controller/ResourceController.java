@@ -1,7 +1,7 @@
 package com.api.ProjectJDBC.controller;
 
 import com.api.ProjectJDBC.domain.entities.resources.Resource;
-import com.api.ProjectJDBC.domain.service.ResourceService;
+import com.api.ProjectJDBC.domain.service.farmResources.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

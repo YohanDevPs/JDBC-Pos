@@ -9,7 +9,7 @@ import java.util.List;
 @Entity
 @Table(name = "tresource")
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Resource {
+public class Resource {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
